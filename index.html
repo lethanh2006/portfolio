@@ -28,7 +28,45 @@
     @media(max-width:900px){.node-be{top:64px}}
     @media(max-width:680px){.node-be{top:58px;transform:none}.tech-node{min-width:0;width:calc(50% - 24px);padding:12px 9px;gap:7px}.tech-node .node-icon{width:23px}.tech-node small{font-size:7px}}
     @media(max-width:370px){.tech-node{width:calc(50% - 17px);padding:11px 7px;gap:6px}.tech-node .node-icon{width:21px}.tech-node b{font-size:10px}.tech-node small{font-size:6.5px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+    /* Chuyển động: cuộn đến đâu hiện đến đó; hover có nhịp nhanh hơn reveal. */
+    :root{--reveal-duration:1200ms;--reveal-distance:26px;--motion-ease:cubic-bezier(.22,1,.36,1);--hover-duration:420ms}
+    @keyframes reveal-in{
+      from{opacity:0;translate:0 var(--reveal-distance)}
+      to{opacity:1;translate:0 0}
+    }
+    @media screen{
+      .reveal:not(.is-visible){opacity:0;translate:0 var(--reveal-distance);pointer-events:none}
+      .reveal.is-visible{animation:reveal-in var(--reveal-duration) var(--motion-ease) var(--reveal-delay,0ms) backwards}
+      .reveal:focus-within{opacity:1;translate:none;animation:none;pointer-events:auto}
+      .site-header.reveal{--reveal-distance:-12px;--reveal-duration:1000ms}
+      .engineering-art.reveal{--reveal-duration:1400ms}
+      .cv-button,.social-link,.filter,.nav-menu,.competency,.skill-card,.project-card,.engineering-art,.tech-node,.contact-panel{
+        transition:transform var(--hover-duration) var(--motion-ease),background-color var(--hover-duration) ease,border-color var(--hover-duration) ease,box-shadow var(--hover-duration) ease,color var(--hover-duration) ease;
+      }
+      .brand,.nav-links a,.text-link,.print-button,.hero-signoff,.footer-inner>a,.project-details summary{
+        transition:color var(--hover-duration) ease,border-color var(--hover-duration) ease;
+      }
+      .cv-button .icon,.text-link .icon,.social-link .icon,.hero-signoff .icon,.footer-inner>a .icon{
+        transition:transform var(--hover-duration) var(--motion-ease);
+      }
+      .project-visual>div{transition:scale 650ms var(--motion-ease)}
+      .cv-button:active,.filter:active,.nav-menu:active{transform:translateY(1px) scale(.98);transition-duration:160ms}
+    }
+    @media screen and (hover:hover) and (pointer:fine){
+      .competency:hover,.skill-card:hover,.project-card:hover{transform:translateY(-6px);border-color:#789b80;box-shadow:0 16px 34px #0003}
+      .engineering-art:hover,.contact-panel:hover{border-color:#789b80;box-shadow:0 12px 32px #0002}
+      .tech-node:hover{border-color:#91bd9b;background-color:#343e37;box-shadow:0 12px 26px #0003}
+      .project-card:hover .project-visual>div{scale:1.025}
+      .cv-button:hover{transform:translateY(-4px);box-shadow:0 12px 30px #a7edb92b}
+      .cv-button:hover .icon:last-child,.text-link:hover .icon{transform:translate(2px,-2px)}
+      .social-link:hover{transform:translateY(-3px)}
+      .filter:hover,.nav-menu:hover{transform:translateY(-2px);border-color:#789b80}
+      .brand:hover,.hero-signoff:hover,.footer-inner>a:hover,.project-details summary:hover{color:var(--green)}
+      .hero-signoff:hover .icon{transform:translateY(3px)}
+      .footer-inner>a:hover .icon{transform:translateY(-3px)}
+      .cv-button:active,.filter:active,.nav-menu:active{transform:translateY(1px) scale(.98)}
+    }
+    @media screen and (max-width:680px){:root{--reveal-distance:18px}}
     @media print{
       :root{color-scheme:light;--bg:#fff;--deep:#fff;--panel:#fff;--line:#ccd3ce;--text:#17251b;--muted:#48544b;--green:#28623a;--green-ink:#17251b}
       @page{size:A4;margin:14mm}*{box-shadow:none!important;text-shadow:none!important}html{scroll-behavior:auto}body{font-size:10pt;background:#fff;color:#17251b}.wrap{width:100%;max-width:none}.site-header,.engineering-art,.hero-actions,.hero-footnote,.hero-signoff,.stack-strip,.filters,.project-visual,.contact-actions,.contact-socials,.site-footer,.toast,.skip-link{display:none!important}.hero{padding:0}.hero-main{display:block}.role-pill{margin-bottom:10px;padding:0;border:0;font-size:10pt;background:none}.hero h1{font-size:26pt;letter-spacing:-1px}.hero h1 .green{display:inline}.hero h1 .green:before{content:" "}.hero-intro{max-width:none;font-size:10pt;margin-top:10px}.hero-stats{margin-top:17px;padding:13px 0;gap:26px;display:flex;justify-content:flex-start}.stat-number{font-size:22pt}.stat-label{font-size:7pt;max-width:85px}.section,.contact{padding-block:18px}.section-head{margin-bottom:16px;gap:20px;display:flex;flex-direction:row}.section-kicker{font-size:7pt;margin-bottom:7px}.section-description{font-size:8pt;max-width:250px}h2,.about-title{font-size:21pt}.about-grid{gap:25px;grid-template-columns:1fr 1.3fr}.about-copy>p{font-size:9pt}.about-principles{font-size:7pt;gap:8px}.competencies{grid-template-columns:repeat(4,1fr);gap:8px;margin-top:17px}.competency{padding:12px;background:#fff;break-inside:avoid}.competency-top{margin-bottom:8px}.competency h3{font-size:10pt}.competency p{font-size:8pt}.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.skill-card,.skill-card[hidden]{display:block!important;break-inside:avoid;padding:14px;background:#fff}.skill-header{margin-bottom:10px;gap:9px}.skill-header h3{font-size:11pt}.skill-icon{width:28px;height:28px;background:none}.skill-card>p{font-size:8pt;margin-bottom:10px}.tag,.tag.key{font-size:7pt;border-color:#ccd3ce;background:#fff;color:#284332;padding:2px 5px}.tags{gap:4px}.skill-note{font-size:8pt}.project-grid{grid-template-columns:1fr;gap:12px}.project-card{background:#fff;break-inside:avoid}.project-body{padding:16px}.project-type{font-size:7pt;margin-bottom:6px}.project-body h3{font-size:15pt;margin-bottom:8px}.project-body>p{font-size:9pt;margin-bottom:10px}.project-details{margin-top:12px;padding-top:10px}.project-details summary{font-size:8pt}.project-details summary:after{display:none}.project-details ul{font-size:8pt;margin-top:9px}.workflow{padding-top:22px}.workflow-grid{grid-template-columns:repeat(4,1fr);gap:15px}.workflow-step{break-inside:avoid}.workflow-step h3{font-size:9pt}.workflow-step p{font-size:8pt}.workflow-heading{font-size:8pt}.contact-panel{padding:18px;display:block;background:#fff;break-inside:avoid}.contact-panel h2{font-size:19pt}.contact-panel p{font-size:9pt;max-width:none}.print-contact{display:block;margin-top:12px;font-size:9pt;overflow-wrap:anywhere}.print-contact p{margin-top:4px}.index{color:#526457!important}
@@ -320,6 +358,42 @@
       detailState = null;
     });
     document.getElementById('print-cv').addEventListener('click', () => window.print());
+
+    // Nội dung mặc định vẫn hiện nếu JavaScript hoặc IntersectionObserver không khả dụng.
+    // Chỉ reveal một lần mỗi lượt tải trang, không ẩn lại khi cuộn ngược lên.
+    if ('IntersectionObserver' in window) {
+      const revealTargets = document.querySelectorAll([
+        '.site-header', '.hero-copy > :not(.print-heading)', '.engineering-art',
+        '.hero-stats > *', '.stack-list', '.about-grid > *', '.competency',
+        '.section-head', '.filters', '.skill-card', '.skill-note', '.project-card',
+        '.workflow-heading', '.workflow-step', '.contact-panel', '.footer-inner'
+      ].join(','));
+      const reveal = (element, delay = 0) => {
+        element.style.setProperty('--reveal-delay', `${delay}ms`);
+        element.classList.add('is-visible');
+        revealObserver.unobserve(element);
+      };
+      const revealObserver = new IntersectionObserver(entries => {
+        const groupCounts = new Map();
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const group = entry.target.parentElement;
+          const index = groupCounts.get(group) || 0;
+          // Các thẻ cùng hàng hiện lần lượt, nhưng không phải chờ quá lâu.
+          reveal(entry.target, Math.min(index * 80, 320));
+          groupCounts.set(group, index + 1);
+        });
+      }, { threshold: 0.08 });
+      revealTargets.forEach(element => {
+        element.classList.add('reveal');
+        revealObserver.observe(element);
+      });
+      // Tab đến nội dung ngoài màn hình vẫn thấy ngay phần đang thao tác.
+      document.addEventListener('focusin', event => {
+        const target = event.target.closest('.reveal');
+        if (target && !target.classList.contains('is-visible')) reveal(target);
+      });
+    }
   </script>
 </body>
 </html>
