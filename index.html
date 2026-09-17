@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#25272b">
+  <meta name="theme-color" content="#f6f8f5">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%2325272b%27/%3E%3Cpath d=%27m23 20-12 12 12 12m18-24 12 12-12 12m-5-29-8 34%27 fill=%27none%27 stroke=%27%23a7edb9%27 stroke-width=%274%27/%3E%3C/svg%3E">
-  <meta name="description" content="Portfolio Thanh Lê — Software Engineer. Frontend với Next.js, backend NestJS, ứng dụng React Native và DevOps cho hệ sinh thái NRApp.">
+  <meta name="description" content="Thanh Lê — Software Engineer. NRApp — ứng dụng quản lý công việc; Hanni — frontend web học tiếng Trung theo HSK 3.0.">
   <title>Thanh Lê — Software Engineer</title>
+  <script>
+    // Khôi phục giao diện trước khi vẽ trang để tránh nháy màu.
+    (() => {
+      let savedTheme;
+      try { savedTheme = localStorage.getItem('portfolio-theme'); } catch {}
+      const theme = ['light', 'dark'].includes(savedTheme) ? savedTheme : 'light';
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content = theme === 'light' ? '#f6f8f5' : '#25272b';
+    })();
+  </script>
   <style>
     :root{color-scheme:dark;--bg:#25272b;--deep:#202226;--panel:#2c2e33;--panel-light:#31343a;--line:#3c3f43;--text:#f3f3ed;--muted:#b2b5b6;--green:#a7edb9;--green-ink:#183b23;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--sans:Inter,"Segoe UI",Arial,sans-serif;--max:1200px}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button,a{-webkit-tap-highlight-color:transparent}button:disabled{cursor:default}button,svg{flex-shrink:0}button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--green);outline-offset:6px}::selection{background:var(--green);color:var(--green-ink)}h1,h2,h3,h4,p{margin:0}h1,h2,h3,h4{line-height:1.2}button{color:inherit}svg{display:block}.icon{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}.wrap{width:min(var(--max),calc(100% - 96px));margin-inline:auto}.mono{font-family:var(--mono)}.green{color:var(--green)}.muted{color:var(--muted)}[hidden]{display:none!important}.skip-link{position:fixed;top:-100px;left:20px;z-index:100;background:var(--green);color:var(--deep);padding:12px 20px}.skip-link:focus{top:15px}
@@ -67,13 +77,33 @@
       .cv-button:active,.filter:active,.nav-menu:active{transform:translateY(1px) scale(.98)}
     }
     @media screen and (max-width:680px){:root{--reveal-distance:18px}}
+    .nav-links{margin-left:auto}.nav-actions{display:flex;align-items:center;gap:18px}.theme-toggle{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--green)}.theme-toggle:hover{border-color:var(--green)}.theme-toggle .theme-moon{display:none}html[data-theme="light"] .theme-toggle .theme-sun{display:none}html[data-theme="light"] .theme-toggle .theme-moon{display:block}.project-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px}.project-links .text-link{font-size:12px}.project-release{margin-bottom:30px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;border:1px solid var(--line);background:var(--panel);border-radius:7px}.project-release h3{font-size:19px;margin:8px 0}.project-release p{font-size:12px;color:var(--muted)}.project-release .cv-button{min-width:205px;min-height:56px;padding:14px 20px}.release-status{font:10px var(--mono);color:var(--green);display:flex;align-items:center;gap:9px}
+    @media screen{
+      html[data-theme="light"]{color-scheme:light;--bg:#f6f8f5;--deep:#edf1eb;--panel:#fff;--panel-light:#e8eee6;--line:#ced7ca;--text:#203126;--muted:#52634f;--green:#28633a;--green-ink:#fff}
+      html[data-theme="light"] .engineering-art{background-color:#edf2eb;background-image:radial-gradient(#70876c40 .8px,transparent .8px);border-color:var(--line)}
+      html[data-theme="light"] .core{background:linear-gradient(140deg,#dbead8,#f5f9f2);border-color:#8bac82}html[data-theme="light"] .core-label{color:var(--text)}html[data-theme="light"] .art-orbit{border-color:#8bac8240}html[data-theme="light"] .art-orbit:after{border-color:#8bac8260}html[data-theme="light"] .diagram{color:#8bac82}
+      html[data-theme="light"] .tech-node,html[data-theme="light"] .competency,html[data-theme="light"] .project-card,html[data-theme="light"] .nav-links.is-open{background:var(--panel);border-color:var(--line)}html[data-theme="light"] .art-bottom{background:#f6f8f5ed;border-color:var(--line)}
+      html[data-theme="light"] .tag{background:#f1f5ee;border-color:var(--line);color:#40543d}html[data-theme="light"] .tag.key{color:var(--green);background:#e7f2e2;border-color:#c3d7b9}html[data-theme="light"] .skill-icon,html[data-theme="light"] .role-pill{background:#e7f2e2;border-color:#c3d7b9}
+      html[data-theme="light"] .stack-list,html[data-theme="light"] .about-principles,html[data-theme="light"] .skill-note strong,html[data-theme="light"] .footer-note,html[data-theme="light"] .contact-socials .social-link{color:var(--muted)}html[data-theme="light"] .contact-panel,html[data-theme="light"] .contact-socials .social-link{border-color:var(--line)}html[data-theme="light"] .contact-panel:after{color:#28633a08}
+      html[data-theme="light"] .cv-button:hover{background:#1e502d;color:#fff}html[data-theme="light"] .skip-link{color:#fff}html[data-theme="light"] .dot{box-shadow:0 0 0 4px #28633a10}
+      /* Các minh họa sản phẩm giữ bảng màu riêng. */
+      .project-visual{--green:#a7edb9;--muted:#b2b5b6}
+    }
+    @media(max-width:900px){.nav{gap:20px}.nav-actions{gap:12px}}
+    @media(max-width:680px){.nav{gap:12px}.nav-actions{margin-left:auto;gap:10px}.project-release{flex-direction:column;align-items:stretch;padding:23px}.project-release .cv-button{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal:not(.is-visible){opacity:1;translate:none;pointer-events:auto}}
     @media print{
       :root{color-scheme:light;--bg:#fff;--deep:#fff;--panel:#fff;--line:#ccd3ce;--text:#17251b;--muted:#48544b;--green:#28623a;--green-ink:#17251b}
       @page{size:A4;margin:14mm}*{box-shadow:none!important;text-shadow:none!important}html{scroll-behavior:auto}body{font-size:10pt;background:#fff;color:#17251b}.wrap{width:100%;max-width:none}.site-header,.engineering-art,.hero-actions,.hero-footnote,.hero-signoff,.stack-strip,.filters,.project-visual,.contact-actions,.contact-socials,.site-footer,.toast,.skip-link{display:none!important}.hero{padding:0}.hero-main{display:block}.role-pill{margin-bottom:10px;padding:0;border:0;font-size:10pt;background:none}.hero h1{font-size:26pt;letter-spacing:-1px}.hero h1 .green{display:inline}.hero h1 .green:before{content:" "}.hero-intro{max-width:none;font-size:10pt;margin-top:10px}.hero-stats{margin-top:17px;padding:13px 0;gap:26px;display:flex;justify-content:flex-start}.stat-number{font-size:22pt}.stat-label{font-size:7pt;max-width:85px}.section,.contact{padding-block:18px}.section-head{margin-bottom:16px;gap:20px;display:flex;flex-direction:row}.section-kicker{font-size:7pt;margin-bottom:7px}.section-description{font-size:8pt;max-width:250px}h2,.about-title{font-size:21pt}.about-grid{gap:25px;grid-template-columns:1fr 1.3fr}.about-copy>p{font-size:9pt}.about-principles{font-size:7pt;gap:8px}.competencies{grid-template-columns:repeat(4,1fr);gap:8px;margin-top:17px}.competency{padding:12px;background:#fff;break-inside:avoid}.competency-top{margin-bottom:8px}.competency h3{font-size:10pt}.competency p{font-size:8pt}.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.skill-card,.skill-card[hidden]{display:block!important;break-inside:avoid;padding:14px;background:#fff}.skill-header{margin-bottom:10px;gap:9px}.skill-header h3{font-size:11pt}.skill-icon{width:28px;height:28px;background:none}.skill-card>p{font-size:8pt;margin-bottom:10px}.tag,.tag.key{font-size:7pt;border-color:#ccd3ce;background:#fff;color:#284332;padding:2px 5px}.tags{gap:4px}.skill-note{font-size:8pt}.project-grid{grid-template-columns:1fr;gap:12px}.project-card{background:#fff;break-inside:avoid}.project-body{padding:16px}.project-type{font-size:7pt;margin-bottom:6px}.project-body h3{font-size:15pt;margin-bottom:8px}.project-body>p{font-size:9pt;margin-bottom:10px}.project-details{margin-top:12px;padding-top:10px}.project-details summary{font-size:8pt}.project-details summary:after{display:none}.project-details ul{font-size:8pt;margin-top:9px}.workflow{padding-top:22px}.workflow-grid{grid-template-columns:repeat(4,1fr);gap:15px}.workflow-step{break-inside:avoid}.workflow-step h3{font-size:9pt}.workflow-step p{font-size:8pt}.workflow-heading{font-size:8pt}.contact-panel{padding:18px;display:block;background:#fff;break-inside:avoid}.contact-panel h2{font-size:19pt}.contact-panel p{font-size:9pt;max-width:none}.print-contact{display:block;margin-top:12px;font-size:9pt;overflow-wrap:anywhere}.print-contact p{margin-top:4px}.index{color:#526457!important}
     }
     @media print{
-      .print-heading{display:block;margin-bottom:10px}.print-heading h2{font-size:27pt}.print-heading>p{font:11pt var(--mono);margin-top:7px;color:#28623a}.print-heading .print-contact{font-size:8pt;margin-top:8px}.print-heading .print-contact p{font-size:8pt;margin:2px 0}.hero .role-pill,.hero h1,.hero-stats,.about,.workflow,.contact,#filter-status{display:none!important}.hero-intro{font-size:9pt;margin-top:12px;padding-bottom:14px;border-bottom:1px solid #ccd3ce}.hero-intro strong,.skill-note strong{color:#17251b}.section-description{display:none}.projects{break-before:page;border:0}.project-grid{grid-template-columns:1fr 1fr;gap:11px}.project-body{padding:13px}.project-body h3{font-size:13pt}.project-body>p{font-size:8pt}.project-details ul{font-size:7.7pt}.project-details summary{color:#284332;font-size:7pt}.skill-header .index{font-size:7pt}.skills-grid{gap:9px}.skill-card,.skill-card[hidden]{padding:12px}.skill-card>p{font-size:7.7pt}.skill-note{font-size:7.5pt}.tag,.tag.key{font-size:6.7pt}.section{padding-block:15px}
+      .print-heading{display:block;margin-bottom:10px}.print-heading h2{font-size:27pt}.print-heading>p{font:11pt var(--mono);margin-top:7px;color:#28623a}.print-heading .print-contact{font-size:8pt;margin-top:8px}.print-heading .print-contact p{font-size:8pt;margin:2px 0}.hero .role-pill,.hero h1,.hero-stats,.about,.workflow,.contact,#filter-status{display:none!important}.hero-intro{font-size:9pt;margin-top:12px;padding-bottom:14px;border-bottom:1px solid #ccd3ce}.hero-intro strong,.skill-note strong{color:#17251b}.section-description{display:none}.projects{break-before:page;border:0}.project-release{display:none}.project-links .text-link{font-size:7pt}.project-grid{grid-template-columns:1fr 1fr;gap:11px}.project-body{padding:13px}.project-body h3{font-size:13pt}.project-body>p{font-size:8pt}.project-details ul{font-size:7.7pt}.project-details summary{color:#284332;font-size:7pt}.skill-header .index{font-size:7pt}.skills-grid{gap:9px}.skill-card,.skill-card[hidden]{padding:12px}.skill-card>p{font-size:7.7pt}.skill-note{font-size:7.5pt}.tag,.tag.key{font-size:6.7pt}.section{padding-block:15px}
     }
+    .featured-products{align-items:stretch}.featured-products .project-card{display:flex;flex-direction:column}.featured-products .project-body{display:flex;flex-direction:column;flex:1}.featured-products .project-links{margin-top:auto;padding-top:20px;align-items:center}.product-cta{min-width:0;min-height:48px;padding:12px 18px;font-size:12px;gap:12px}.visual-hanni{padding:0;height:auto;aspect-ratio:1672/941;background:#b6211f}.visual-hanni img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}.visual-hanni:hover img{transform:scale(1.025)}.featured-products .visual-app{height:auto;aspect-ratio:1672/941}.project-body .project-credit{margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:12px;line-height:1.9}.project-credit strong{color:var(--text);font-weight:550}.credit-link{color:var(--green);text-decoration:underline;text-underline-offset:4px}.credit-link:hover{color:var(--text)}.project-architecture{margin-top:30px;border-top:1px solid var(--line);padding-top:22px}.project-architecture>summary{cursor:pointer;font:12px var(--mono);color:var(--text);padding:8px 0}.project-architecture[open]>summary{margin-bottom:20px}
+    html[data-theme="light"] .project-details summary{color:var(--text)}
+    @media print{.projects{break-before:auto}.product-cta{background:none;border:0;padding:0;color:#284332;min-height:0}.project-architecture{display:none}.featured-products .project-visual{display:none}.featured-products .project-links{margin-top:8px;padding-top:0}.project-body .project-credit{font-size:8pt}}
+    .hero-actions .hanni-hero-cta{min-height:78px;min-width:300px;padding:22px 32px;font-size:18px;gap:28px}.hero-actions .hanni-hero-cta .icon{width:26px;height:26px}
+    @media(max-width:680px){.hero-actions .hanni-hero-cta{width:100%;min-width:0;min-height:72px;padding:20px 24px;font-size:17px}.hero-actions>.text-link{font-size:12px}}
   </style>
 </head>
 <body>
@@ -98,19 +128,24 @@
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
     <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H3v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7h-3M6 14h12v7H6zM17 12h.01"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z"/></symbol>
     <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V4m-6 6 6-6 6 6"/></symbol>
   </svg>
 
   <header class="site-header" id="top">
     <nav class="nav wrap" aria-label="Điều hướng chính">
       <a class="brand" href="#top" aria-label="Về đầu trang"><span class="brand-mark">&lt;/&gt;</span><span class="brand-name" data-name>Thanh Lê</span></a>
-      <div class="nav-links" id="nav-links"><a href="#gioi-thieu">Giới thiệu</a><a href="#ky-nang">Kỹ năng</a><a href="#du-an">Dự án</a><a href="#lien-he">Liên hệ</a></div>
+      <div class="nav-links" id="nav-links"><a href="#gioi-thieu">Giới thiệu</a><a href="#du-an">Dự án</a><a href="#ky-nang">Kỹ năng</a><a href="#lien-he">Liên hệ</a></div>
+      <div class="nav-actions">
       <div class="header-socials" aria-label="Mạng xã hội">
         <a class="social-link" href="#" data-social="github" aria-label="GitHub" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a>
         <a class="social-link" href="#" data-social="linkedin" aria-label="LinkedIn" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
         <a class="social-link" href="#" data-social="email" aria-label="Email" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
       </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Chuyển sang giao diện tối" title="Chuyển sang giao diện tối" aria-pressed="true"><svg class="icon theme-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="icon theme-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
       <button class="nav-menu" id="menu-toggle" aria-label="Mở menu" aria-controls="nav-links" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      </div>
     </nav>
   </header>
 
@@ -121,10 +156,10 @@
           <div class="print-heading"><h2 data-name>Thanh Lê</h2><p data-role>Software Engineer</p><div class="print-contact" id="print-contact"></div></div>
           <div class="role-pill"><span class="dot"></span><span data-role>Software Engineer</span></div>
           <h1 id="hero-title">Từ ý tưởng.<br>Đến sản phẩm <span class="green">hoàn chỉnh.</span></h1>
-          <p class="hero-intro">Xin chào, mình là <strong data-name>Thanh Lê</strong>. Mình xây dựng ứng dụng từ giao diện web, backend đến mobile — và hạ tầng để kết nối tất cả.</p>
+          <p class="hero-intro">Xin chào, mình là <strong data-name>Thanh Lê</strong>. Mình xây dựng <strong>NRApp</strong> — ứng dụng quản lý công việc, từ web, backend đến mobile. Với <strong>Hanni</strong> — web học tiếng Trung, mình phụ trách frontend và tích hợp API.</p>
           <div class="hero-actions">
-            <a class="cv-button" href="#" data-cv aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>TẢI CV CỦA MÌNH<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="text-link" href="#du-an">Khám phá dự án<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="cv-button hanni-hero-cta" href="https://hanni.dangpham.id.vn/" target="_blank" rel="noopener noreferrer">Trải nghiệm Hanni<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link" href="https://github.com/lethanh2006/Nrapp/releases/download/v1.0.3/Nrapp.apk"><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>Tải NRApp · v1.0.3</a>
           </div>
           <p class="hero-footnote">FRONTEND / BACKEND / DEVOPS / MOBILE</p>
         </div>
@@ -136,12 +171,12 @@
           <div class="tech-node node-fe"><span class="node-icon"><svg class="icon"><use href="#i-window"/></svg></span><div><b>Frontend</b><small>Next.js · React</small></div></div>
           <div class="tech-node node-be"><span class="node-icon"><svg class="icon"><use href="#i-server"/></svg></span><div><b>Backend</b><small>NestJS · Node.js</small></div></div>
           <div class="tech-node node-mobile"><span class="node-icon"><svg class="icon"><use href="#i-phone"/></svg></span><div><b>Mobile app</b><small>React Native · Expo</small></div></div>
-          <div class="tech-node node-ops"><span class="node-icon"><svg class="icon"><use href="#i-cloud"/></svg></span><div><b>DevOps</b><small>Docker · OTel</small></div></div>
+          <div class="tech-node node-ops"><span class="node-icon"><svg class="icon"><use href="#i-cloud"/></svg></span><div><b>DevOps</b><small>Docker · VPS</small></div></div>
           <div class="art-bottom"><span class="green">❯</span><span>turning ideas into working software</span><span class="cursor"></span></div>
         </div>
       </div>
-      <div class="hero-stats" aria-label="Quy mô hệ sinh thái NRApp">
-        <div class="stat"><span class="stat-number">04</span><span class="stat-label">Mảng kỹ thuật<br>kết nối xuyên suốt</span></div>
+      <div class="hero-stats" aria-label="Sản phẩm và chuyên môn">
+        <div class="stat"><span class="stat-number">02</span><span class="stat-label">Sản phẩm<br>NRApp & Hanni</span></div>
         <div class="stat"><span class="stat-number">09</span><span class="stat-label">Backend<br>services</span></div>
         <div class="stat"><span class="stat-number">02</span><span class="stat-label">Web apps<br>Admin & User</span></div>
         <div class="stat"><span class="stat-number">01</span><span class="stat-label">Ứng dụng<br>đa nền tảng</span></div>
@@ -149,73 +184,64 @@
       </div>
     </section>
 
-    <div class="stack-strip"><div class="stack-list wrap"><span class="stack-title">CORE STACK</span><span><i></i>TypeScript</span><span><i></i>Next.js</span><span><i></i>NestJS</span><span><i></i>React Native</span><span><i></i>PostgreSQL</span><span><i></i>Docker</span></div></div>
+
 
     <section class="section about" id="gioi-thieu" aria-labelledby="about-title">
       <div class="wrap">
         <div class="about-grid">
           <div><p class="section-kicker"><span>01 /</span> Về mình</p><h2 class="about-title" id="about-title">Viết code có mục đích.<br><span class="green">Xây sản phẩm có kết nối.</span></h2></div>
-          <div class="about-copy"><p>Mình là <strong data-role>Software Engineer</strong> với kinh nghiệm thực hành trên hệ sinh thái <strong>NRApp</strong>: cổng quản trị, web nhân viên, ứng dụng mobile và các dịch vụ nghiệp vụ. Mình làm việc xuyên suốt từ giao diện, API, dữ liệu và xác thực đến đóng gói, kiểm thử và quan sát hệ thống.</p><div class="about-principles"><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Type-safe development</span><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Phân tách trách nhiệm</span><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Theo dõi & kiểm thử</span></div></div>
+          <div class="about-copy"><p>Mình là <strong data-role>Software Engineer</strong>, xây dựng <strong>NRApp</strong> từ web, API đến ứng dụng Android. Mình triển khai backend NRApp trên VPS, thiết lập CI/CD, giám sát và backup dữ liệu tự động. Với <strong>Hanni</strong>, mình phụ trách frontend: giao diện học tiếng Trung, theme sáng/tối, banner và tích hợp API; backend do <a class="credit-link" href="https://www.facebook.com/danghaipham" target="_blank" rel="noopener noreferrer">Đặng Hải Phạm</a> phát triển.</p><div class="about-principles"><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Type-safe development</span><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Phân tách trách nhiệm</span><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Theo dõi & kiểm thử</span></div></div>
         </div>
-        <div class="competencies">
-          <article class="competency"><div class="competency-top"><svg class="icon" aria-hidden="true"><use href="#i-window"/></svg><span>01</span></div><h3>Frontend engineering</h3><p>Web responsive, dashboard, BFF và trải nghiệm theo vai trò.</p></article>
-          <article class="competency"><div class="competency-top"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg><span>02</span></div><h3>Backend engineering</h3><p>API, microservices, dữ liệu, realtime và tích hợp thanh toán.</p></article>
-          <article class="competency"><div class="competency-top"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg><span>03</span></div><h3>DevOps & observability</h3><p>Containers, CI, metrics, logs, tracing và cảnh báo.</p></article>
-          <article class="competency"><div class="competency-top"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>04</span></div><h3>Mobile development</h3><p>Ứng dụng Expo, chat realtime, camera, QR và secure storage.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="ky-nang" aria-labelledby="skills-title">
-      <div class="wrap">
-        <div class="section-head"><div><p class="section-kicker"><span>02 /</span> Technical toolkit</p><h2 id="skills-title">Công nghệ mình làm việc.</h2></div><p class="section-description">Một bộ kỹ năng kết nối giao diện, nghiệp vụ, dữ liệu và vận hành trong cùng một hệ thống.</p></div>
-        <div class="filters" role="group" aria-label="Lọc kỹ năng theo chuyên môn"><button class="filter" data-filter="all" aria-pressed="true">Tất cả</button><button class="filter" data-filter="frontend" aria-pressed="false">Frontend</button><button class="filter" data-filter="backend" aria-pressed="false">Backend</button><button class="filter" data-filter="devops" aria-pressed="false">DevOps</button><button class="filter" data-filter="mobile" aria-pressed="false">Mobile app</button></div>
-        <div class="skills-grid" id="skills-grid">
-          <!-- Evidence: nrapp-{admin,user}-web/package.json; app/; lib/api/; lib/auth/; components/providers/ -->
-          <article class="skill-card" data-category="frontend"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-window"/></svg></span><h3>Frontend & web platform</h3><span class="index">01</span></div><p>Xây dựng web Admin/User với App Router, BFF Route Handlers, React Hooks và Context. Thiết kế responsive; xử lý loading, empty, error state và quản lý phiên.</p><div class="tags"><span class="tag key">TypeScript</span><span class="tag key">JavaScript</span><span class="tag key">React 19</span><span class="tag key">Next.js 16</span><span class="tag">HTML5</span><span class="tag">CSS3 / CSS Modules</span><span class="tag">CSS variables</span><span class="tag">App Router</span><span class="tag">Route Handlers / BFF</span><span class="tag">Hooks / Context API</span><span class="tag">Fetch API</span><span class="tag">AbortController</span><span class="tag">Lucide React</span><span class="tag">Responsive UI</span><span class="tag">Semantic HTML / ARIA</span></div></article>
-          <!-- Evidence: backend/*/package.json; gateway/src/; auth/src/; canteen/src/common/crud/ -->
-          <article class="skill-card" data-category="backend"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg></span><h3>Backend & API architecture</h3><span class="index">02</span></div><p>Tổ chức 9 backend service gồm Gateway và 8 dịch vụ nghiệp vụ, thiết kế REST API, validation DTO, dependency injection và giao tiếp bất đồng bộ giữa các service.</p><div class="tags"><span class="tag key">Node.js</span><span class="tag key">NestJS 11</span><span class="tag key">TypeScript</span><span class="tag">Express</span><span class="tag">REST API</span><span class="tag">Microservices</span><span class="tag">API Gateway</span><span class="tag">Swagger / OpenAPI</span><span class="tag">Dependency injection</span><span class="tag">class-validator</span><span class="tag">class-transformer</span><span class="tag">RxJS</span><span class="tag">Background workers</span></div></article>
-          <!-- Evidence: backend/payment/src/; backend/chat/src/; backend/*/package.json -->
-          <article class="skill-card" data-category="backend"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg></span><h3>Database, realtime & integrations</h3><span class="index">03</span></div><p>Lưu trữ SQL/NoSQL, cache và messaging; chat realtime, upload ảnh, gửi email. Tích hợp thanh toán với webhook idempotent và transactional outbox.</p><div class="tags"><span class="tag key">PostgreSQL</span><span class="tag key">MongoDB</span><span class="tag key">Redis</span><span class="tag key">RabbitMQ</span><span class="tag">TypeORM / migrations</span><span class="tag">Mongoose</span><span class="tag">node-redis</span><span class="tag">amqplib</span><span class="tag">Socket.IO</span><span class="tag">Cloudinary</span><span class="tag">Multer / FormData</span><span class="tag">Nodemailer / SMTP</span><span class="tag">Casso / VietQR</span><span class="tag">Webhooks / idempotency</span><span class="tag">Transactional outbox</span><span class="tag">SQL transactions / row locking</span><span class="tag">Indexes</span><span class="tag">Retry / dead-letter queues</span></div></article>
-          <!-- Evidence: backend/auth/src/; backend/user/src/; web/lib/auth/; Nrapp/src/services/auth/ -->
-          <article class="skill-card" data-category="frontend backend mobile"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><h3>Authentication & access control</h3><span class="index">04</span></div><p>Xác thực OTP, đăng nhập Google, phân quyền vai trò; bảo vệ phiên bằng refresh token, cookie HttpOnly và secure storage. Ký request nội bộ bằng HMAC.</p><div class="tags"><span class="tag key">JWT / Passport</span><span class="tag key">OTP</span><span class="tag key">RBAC</span><span class="tag">bcrypt</span><span class="tag">Google Sign-In</span><span class="tag">Refresh token rotation</span><span class="tag">Refresh request deduplication</span><span class="tag">HttpOnly / Secure / SameSite</span><span class="tag">Route guards</span><span class="tag">HMAC signing</span><span class="tag">Redis rate limiting</span><span class="tag">Expo SecureStore</span><span class="tag">Session management</span></div></article>
-          <!-- Evidence: backend/compose.yaml; backend/docker/; backend/*/.github/workflows/ci.yml; Nrapp/scripts/start-android.js -->
-          <article class="skill-card" data-category="devops"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>DevOps & delivery</h3><span class="index">05</span></div><p>Đóng gói service với Docker, quản lý stack bằng Compose, cấu hình healthcheck và môi trường. Thiết lập CI chạy lint, test và build với GitHub Actions.</p><div class="tags"><span class="tag key">Docker</span><span class="tag key">Docker Compose</span><span class="tag key">GitHub Actions / CI</span><span class="tag">Multi-stage builds</span><span class="tag">BuildKit cache</span><span class="tag">Non-root containers</span><span class="tag">Container networking</span><span class="tag">Volumes / healthchecks</span><span class="tag">Environment configuration</span><span class="tag">Git / GitHub</span><span class="tag">npm scripts</span><span class="tag">Node.js automation</span><span class="tag">Database migrations</span></div></article>
-          <!-- Evidence: backend/logger/compose.yaml; packages/observability/; observability/ -->
-          <article class="skill-card" data-category="devops backend"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></span><h3>Observability & diagnostics</h3><span class="index">06</span></div><p>Kết nối metrics, logs và traces; xây dựng gói observability dùng chung cho backend, theo dõi request qua correlation ID và thiết lập dashboard, cảnh báo.</p><div class="tags"><span class="tag key">OpenTelemetry</span><span class="tag key">Prometheus</span><span class="tag key">Grafana</span><span class="tag">Loki</span><span class="tag">Grafana Alloy</span><span class="tag">Jaeger</span><span class="tag">Alertmanager</span><span class="tag">Pino / structured logging</span><span class="tag">OTLP</span><span class="tag">Distributed tracing</span><span class="tag">Correlation / request ID</span><span class="tag">Dashboards / alert rules</span><span class="tag">cAdvisor</span><span class="tag">Node / Blackbox Exporter</span><span class="tag">Redis / PostgreSQL Exporters</span></div></article>
-          <!-- Evidence: Nrapp/package.json; src/features/; src/services/; metro.config.js; babel.config.js -->
-          <article class="skill-card" data-category="mobile"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Mobile & device integration</h3><span class="index">07</span></div><p>Ứng dụng Android/iOS/web với Expo Router, phân tách feature theo vai trò. Chat realtime, typing/seen, upload ảnh, QR chấm công và giao diện thanh toán VietQR.</p><div class="tags"><span class="tag key">React Native 0.81</span><span class="tag key">Expo SDK 54</span><span class="tag key">Expo Router</span><span class="tag key">NativeWind / Tailwind CSS</span><span class="tag">React Native Web</span><span class="tag">Axios</span><span class="tag">Socket.IO Client</span><span class="tag">AsyncStorage</span><span class="tag">Expo Camera</span><span class="tag">Expo Image / Image Picker</span><span class="tag">react-native-qrcode-svg</span><span class="tag">React Native SVG</span><span class="tag">Safe Area Context</span><span class="tag">DateTimePicker</span><span class="tag">Expo Vector Icons</span><span class="tag">React Native Animated</span><span class="tag">Metro / Babel</span><span class="tag">Android Emulator / ADB</span></div><p class="skill-note"><strong>Thư viện nền tảng trong stack:</strong> React Navigation, React Native Screens, Reanimated, Gesture Handler, Worklets; Expo Font, Splash Screen, Status Bar và System UI.</p></article>
-          <!-- Evidence: backend/**/src/*.spec.ts; backend/workschedule/scripts/; logger/packages/observability/test/; Nrapp/scripts/workschedule-date.test.cjs -->
-          <article class="skill-card" data-category="frontend backend devops mobile"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-test"/></svg></span><h3>Testing & engineering practices</h3><span class="index">08</span></div><p>Kiểm thử logic nghiệp vụ, luồng tích hợp và smoke test; giữ chất lượng bằng type checking, lint, format và quy tắc import. Tổ chức code theo module/feature.</p><div class="tags"><span class="tag key">Jest / ts-jest</span><span class="tag key">Node.js test runner</span><span class="tag key">ESLint</span><span class="tag">NestJS Testing</span><span class="tag">Prettier</span><span class="tag">TypeScript strict</span><span class="tag">Unit / integration tests</span><span class="tag">Contract / concurrency tests</span><span class="tag">Smoke / E2E scripts</span><span class="tag">Test coverage</span><span class="tag">Typed API contracts</span><span class="tag">Feature-based architecture</span><span class="tag">Import boundary rules</span></div><p class="skill-note"><strong>Công cụ có trong dev dependencies:</strong> Supertest; ts-node, ts-loader và tsconfig-paths cho backend.</p></article>
-        </div>
-        <p class="skill-note" id="filter-status" role="status" aria-live="polite">Đang hiển thị 8 nhóm kỹ năng.</p>
       </div>
     </section>
 
     <section class="section projects" id="du-an" aria-labelledby="projects-title">
       <div class="wrap">
-        <div class="section-head"><div><p class="section-kicker"><span>03 /</span> Selected work</p><h2 id="projects-title">Một hệ sinh thái. Nhiều lời giải.</h2></div><p class="section-description">NRApp — hệ thống quản trị và vận hành nội bộ, kết nối người dùng, quy trình và dữ liệu trên web và mobile.</p></div>
-        <div class="project-grid">
+        <div class="section-head"><div><p class="section-kicker"><span>02 /</span> Selected work</p><h2 id="projects-title">Sản phẩm mình xây dựng.</h2></div><p class="section-description">Hanni cho học tiếng Trung và NRApp cho quản lý công việc. Hai sản phẩm, hai vai trò đóng góp rõ ràng.</p></div>
+        <div class="project-grid featured-products">
           <article class="project-card">
-            <div class="project-visual visual-web" aria-hidden="true"><span class="visual-label">WEB APPLICATIONS / UI CONCEPT</span><div class="mini-browser"><div class="browser-bar"><i></i><i></i><i></i><small>nrapp / workspace</small></div><div class="mini-dashboard"><div class="mini-sidebar"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="mini-main"><div class="mini-title">Workspace overview<small>ADMIN / USER</small></div><div class="mini-metrics"><div><b>02</b><small>WEB PORTALS</small></div><div><b>09</b><small>API SERVICES</small></div><div><b>01</b><small>MOBILE APP</small></div></div><div class="mini-chart"><i style="--h:32%"></i><i style="--h:47%"></i><i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:55%"></i><i style="--h:72%"></i><i style="--h:64%"></i><i style="--h:90%"></i><i style="--h:76%"></i><i style="--h:100%"></i></div></div></div></div></div>
-            <div class="project-body"><p class="project-type">01 / Frontend · 2 web applications</p><h3>NRApp Admin & User Web</h3><p>Hai cổng web cho quản trị viên và nhân viên: quản lý nhân sự, lịch làm, công việc, căn tin, đơn hàng và hồ sơ. Kết nối backend qua lớp BFF với phiên đăng nhập bằng cookie HttpOnly.</p><div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">CSS Modules</span></div><details class="project-details"><summary>Những gì mình xây dựng</summary><ul><li>Admin: dashboard KPI, quản lý nhân sự/vai trò, duyệt lịch và đơn từ, báo cáo chấm công; quản lý thực đơn, kho và đơn hàng.</li><li>User: đăng nhập OTP, lịch làm tuần, công việc, danh bạ, hội thoại qua REST, đặt món và theo dõi thanh toán VietQR.</li><li>BFF Route Handlers, session/refresh token, role guards, typed API contracts và chuẩn hóa trạng thái giao diện.</li></ul></details></div>
-          </article>
-          <article class="project-card">
-            <div class="project-visual visual-api" aria-hidden="true"><span class="visual-label">BACKEND / SERVICE ARCHITECTURE</span><div class="service-map"><div class="gateway-box"><svg class="icon"><use href="#i-server"/></svg>API GATEWAY</div><div class="service-trunk"></div><div class="service-grid"><span>AUTH</span><span>USER</span><span>MAIL</span><span>CHAT</span><span>TODO</span><span>WORKSCHEDULE</span><span>CANTEEN</span><span>PAYMENT</span><span>OBSERVABILITY ↗</span></div><div class="service-data"><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>RabbitMQ</span></div></div></div>
-            <div class="project-body"><p class="project-type">02 / Backend · 9 services</p><h3>NRApp Service Platform</h3><p>Hệ thống NestJS gồm Gateway và 8 service nghiệp vụ: auth, user, mail, chat, todo, workschedule, canteen và payment. Phân tách trách nhiệm, dữ liệu và luồng giao tiếp giữa các service.</p><div class="tags"><span class="tag">NestJS</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">RabbitMQ</span></div><details class="project-details"><summary>Những gì mình xây dựng</summary><ul><li>REST API, DTO validation, Swagger, JWT/OTP và Google Sign-In; phân quyền và ký HMAC cho request nội bộ.</li><li>Chat Socket.IO, upload ảnh Cloudinary/Multer, gửi email SMTP và cache với Redis.</li><li>VietQR/Casso trên PostgreSQL: migration TypeORM, chống xử lý webhook trùng và transactional outbox cho sự kiện thanh toán.</li></ul></details></div>
+            <a class="project-visual visual-hanni" href="https://hanni.dangpham.id.vn/" target="_blank" rel="noopener noreferrer" aria-label="Trải nghiệm Hanni — web học tiếng Trung"><img src="./assets/hanni-banner.png" width="1672" height="941" alt="Banner Hanni với linh vật cáo và lời chào tiếng Trung nǐ hǎo" loading="lazy"></a>
+            <div class="project-body"><p class="project-type">01 / Web học tiếng Trung · Frontend</p><h3>Hanni — Học tiếng Trung</h3><p>Web học tiếng Trung theo HSK 3.0 với lộ trình bài học, flashcard, từ vựng, luyện nghe và theo dõi tiến độ. Mình xây dựng frontend responsive, theme sáng/tối, banner và tích hợp API.</p><div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">SWR</span></div><p class="project-credit"><strong>Frontend:</strong> Thanh Lê<br><strong>Backend:</strong> <a class="credit-link" href="https://www.facebook.com/danghaipham" target="_blank" rel="noopener noreferrer">Đặng Hải Phạm ↗</a></p><div class="project-links"><a class="cv-button product-cta" href="https://hanni.dangpham.id.vn/" target="_blank" rel="noopener noreferrer">Trải nghiệm Hanni<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
           </article>
           <article class="project-card">
             <div class="project-visual visual-app" aria-hidden="true"><span class="visual-label">MOBILE APPLICATION / UI CONCEPT</span><div class="phone"><div class="phone-notch"></div><div class="phone-title">nrapp <i></i></div><div class="phone-block">WORKSPACE<br>Chat & collaboration</div><div class="phone-chat reply">Lịch làm đã cập nhật.</div><div class="phone-chat">Mình đã nhận được ✓</div><div class="phone-block" style="margin-top:12px;height:15px"></div></div><div class="phone phone-second"><div class="phone-notch"></div><div class="phone-title">QR ATTENDANCE</div><svg class="qr" viewBox="0 0 60 60" fill="currentColor"><path fill-rule="evenodd" d="M0 0h21v21H0zm4 4v13h13V4zM39 0h21v21H39zm4 4v13h13V4zM0 39h21v21H0zm4 4v13h13V43z"/><path d="M7 7h7v7H7zM46 7h7v7h-7zM7 46h7v7H7zM25 0h5v10h-5zM30 10h5v16H25v-5h5zM0 25h9v5H0zM14 25h12v9H14zM4 30h5v5H4zM30 30h13v5H30zM39 25h5v5h-5zM49 25h11v5H49zM25 39h5v16h-5zM30 48h10v12H30zM35 39h9v5h-9zM48 35h12v9H48zM45 49h5v11h-5zM55 49h5v5h-5z"/></svg><div class="phone-caption">QUÉT MÃ CHẤM CÔNG<br>Camera · Secure session</div></div></div>
-            <div class="project-body"><p class="project-type">03 / Mobile · Android / iOS / Web</p><h3>Nrapp Mobile Application</h3><p>Ứng dụng React Native/Expo phục vụ cả admin và nhân viên. Từ lịch làm, quản lý công việc và căn tin đến chat realtime, quét QR chấm công và giao diện thanh toán VietQR.</p><div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">NativeWind</span><span class="tag">Socket.IO</span></div><details class="project-details"><summary>Những gì mình xây dựng</summary><ul><li>Expo Router, giao diện theo vai trò và cấu trúc feature; xác thực OTP, SecureStore trên native, AsyncStorage trên web và tự refresh token.</li><li>Chat văn bản/hình ảnh, typing indicator, trạng thái đã xem, upload bằng Image Picker và FormData.</li><li>Xin quyền camera, quét/tạo QR chấm công; quản lý lịch, đơn nhân sự, căn tin và truy vấn trạng thái giao dịch.</li></ul></details></div>
-          </article>
-          <article class="project-card">
-            <div class="project-visual visual-ops" aria-hidden="true"><span class="visual-label">INFRASTRUCTURE / OBSERVABILITY</span><div class="ops-terminal"><div class="terminal-heading"><span>nrapp / observability</span><span>LOGS · METRICS · TRACES</span></div><div class="terminal-body"><div><b>❯</b> docker compose up -d</div><div><b>✓</b> service containers & healthchecks</div><div><b>✓</b> OpenTelemetry → metrics / traces</div><div><b>✓</b> Pino → Alloy → Loki</div><div class="terminal-graphs"><div><span>PROMETHEUS</span><svg viewBox="0 0 80 25"><path d="m0 21 10-3 8 1 8-8 9 3 7-6 10 3 7-6 11 2 10-5"/></svg></div><div><span>GRAFANA</span><svg viewBox="0 0 80 25"><path d="m0 18 9-3 8 3 10-10 7 2 9-5 9 4 7-3 10 3 11-7"/></svg></div><div><span>JAEGER</span><svg viewBox="0 0 80 25"><path d="M2 5h35M15 11h43M31 17h29M51 23h24"/></svg></div></div></div></div></div>
-            <div class="project-body"><p class="project-type">04 / DevOps · CI & observability</p><h3>Infrastructure & Monitoring</h3><p>Đóng gói backend bằng Docker Compose, CI qua GitHub Actions và xây dựng gói observability dùng chung. Kết nối logs, metrics, traces để theo dõi các service và chẩn đoán lỗi.</p><div class="tags"><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">OpenTelemetry</span><span class="tag">Grafana</span></div><details class="project-details"><summary>Những gì mình xây dựng</summary><ul><li>Multi-stage Docker builds, Compose networking/volumes/healthchecks và pipeline lint → test → build.</li><li>Pino, correlation ID, OpenTelemetry/OTLP; Prometheus, Grafana, Loki và Alloy cho metrics/logs.</li><li>Dashboard, alert rules và Alertmanager; Jaeger phục vụ tracing trong môi trường local/staging.</li></ul></details></div>
+            <div class="project-body"><p class="project-type">02 / Sản phẩm quản lý · Android v1.0.3</p><h3>NRApp — Quản lý công việc</h3><p>Ứng dụng cho admin và nhân viên: lịch làm, công việc, căn tin, chat và QR chấm công. Mình phát triển frontend web, backend và ứng dụng mobile; triển khai VPS, CI/CD và backup dữ liệu.</p><div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">NestJS</span><span class="tag">Socket.IO</span></div><div class="project-links"><a class="cv-button product-cta" href="https://github.com/lethanh2006/Nrapp/releases/download/v1.0.3/Nrapp.apk" target="_blank" rel="noopener noreferrer">Tải APK v1.0.3<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
           </article>
         </div>
-        <div class="workflow"><p class="workflow-heading">CÁCH MÌNH KẾT NỐI CÁC PHẦN CỦA SẢN PHẨM</p><div class="workflow-grid"><div class="workflow-step"><span>01 / INTERFACE</span><h3>Bắt đầu từ người dùng</h3><p>Xây luồng thao tác, giao diện responsive và phân quyền theo vai trò.</p></div><div class="workflow-step"><span>02 / SYSTEM</span><h3>Thiết kế phần kết nối</h3><p>API contracts, service boundaries, xác thực và mô hình dữ liệu.</p></div><div class="workflow-step"><span>03 / QUALITY</span><h3>Kiểm tra luồng nghiệp vụ</h3><p>Type check, lint, unit test, smoke test và xử lý các trạng thái lỗi.</p></div><div class="workflow-step"><span>04 / OPERATIONS</span><h3>Theo dõi khi hệ thống chạy</h3><p>Đóng gói container, CI và kết nối logs, metrics, traces.</p></div></div></div>
+        <details class="project-architecture"><summary>Khám phá kỹ thuật bên trong NRApp</summary>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-visual visual-web" aria-hidden="true"><span class="visual-label">WEB APPLICATIONS / UI CONCEPT</span><div class="mini-browser"><div class="browser-bar"><i></i><i></i><i></i><small>nrapp / workspace</small></div><div class="mini-dashboard"><div class="mini-sidebar"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="mini-main"><div class="mini-title">Workspace overview<small>ADMIN / USER</small></div><div class="mini-metrics"><div><b>02</b><small>WEB PORTALS</small></div><div><b>09</b><small>API SERVICES</small></div><div><b>01</b><small>MOBILE APP</small></div></div><div class="mini-chart"><i style="--h:32%"></i><i style="--h:47%"></i><i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:55%"></i><i style="--h:72%"></i><i style="--h:64%"></i><i style="--h:90%"></i><i style="--h:76%"></i><i style="--h:100%"></i></div></div></div></div></div>
+            <div class="project-body"><p class="project-type">01 / Frontend · 2 web applications</p><h3>NRApp Admin & User Web</h3><p>Cổng quản trị và nhân viên cho nhân sự, lịch làm, công việc và căn tin; dùng Next.js với BFF và cookie HttpOnly.</p><div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">CSS Modules</span></div></div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual visual-api" aria-hidden="true"><span class="visual-label">BACKEND / SERVICE ARCHITECTURE</span><div class="service-map"><div class="gateway-box"><svg class="icon"><use href="#i-server"/></svg>API GATEWAY</div><div class="service-trunk"></div><div class="service-grid"><span>AUTH</span><span>USER</span><span>MAIL</span><span>CHAT</span><span>TODO</span><span>WORKSCHEDULE</span><span>CANTEEN</span><span>PAYMENT</span><span>OBSERVABILITY ↗</span></div><div class="service-data"><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>RabbitMQ</span></div></div></div>
+            <div class="project-body"><p class="project-type">02 / Backend · 9 services</p><h3>NRApp Service Platform</h3><p>Nền tảng NestJS gồm 9 service, hỗ trợ xác thực, nghiệp vụ và chat realtime; backend triển khai trên VPS.</p><div class="tags"><span class="tag">NestJS</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">RabbitMQ</span></div></div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual visual-ops" aria-hidden="true"><span class="visual-label">INFRASTRUCTURE / OBSERVABILITY</span><div class="ops-terminal"><div class="terminal-heading"><span>nrapp / observability</span><span>LOGS · METRICS · TRACES</span></div><div class="terminal-body"><div><b>❯</b> docker compose up -d</div><div><b>✓</b> service containers & healthchecks</div><div><b>✓</b> OpenTelemetry → metrics / traces</div><div><b>✓</b> Pino → Alloy → Loki</div><div class="terminal-graphs"><div><span>PROMETHEUS</span><svg viewBox="0 0 80 25"><path d="m0 21 10-3 8 1 8-8 9 3 7-6 10 3 7-6 11 2 10-5"/></svg></div><div><span>GRAFANA</span><svg viewBox="0 0 80 25"><path d="m0 18 9-3 8 3 10-10 7 2 9-5 9 4 7-3 10 3 11-7"/></svg></div><div><span>JAEGER</span><svg viewBox="0 0 80 25"><path d="M2 5h35M15 11h43M31 17h29M51 23h24"/></svg></div></div></div></div></div>
+            <div class="project-body"><p class="project-type">04 / DevOps · VPS & backup</p><h3>VPS, Backup & Monitoring</h3><p>Backend chạy trên VPS 2 vCPU / 4 GB RAM. CI/CD, giám sát và backup mã hóa tự động lên GitHub; đã diễn tập restore MongoDB.</p><div class="tags"><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">OpenTelemetry</span><span class="tag">Grafana</span></div></div>
+          </article>
+        </div>
+        </details>
       </div>
     </section>
+
+
+    <section class="section" id="ky-nang" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section-head"><div><p class="section-kicker"><span>03 /</span> Technical toolkit</p><h2 id="skills-title">Công nghệ mình làm việc.</h2></div><p class="section-description">Những công nghệ chính mình sử dụng trong Hanni và NRApp.</p></div>
+        <div class="skills-grid" id="skills-grid">
+          <article class="skill-card" data-category="frontend"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-window"/></svg></span><h3>Frontend</h3><span class="index">01</span></div><p>Giao diện Hanni và web NRApp: responsive, theme sáng/tối và tích hợp API.</p><div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">SWR</span></div></article>
+          <article class="skill-card" data-category="backend"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg></span><h3>Backend & dữ liệu</h3><span class="index">02</span></div><p>API và các dịch vụ NRApp: xác thực, quản lý công việc và chat realtime.</p><div class="tags"><span class="tag">NestJS</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">RabbitMQ</span><span class="tag">Socket.IO</span></div></article>
+          <article class="skill-card" data-category="mobile"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Mobile</h3><span class="index">03</span></div><p>Ứng dụng Android NRApp với chat, lịch làm và QR chấm công.</p><div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Expo Router</span><span class="tag">NativeWind</span></div></article>
+          <article class="skill-card" data-category="devops"><div class="skill-header"><span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>Triển khai & vận hành</h3><span class="index">04</span></div><p>Triển khai NRApp trên VPS, tự động deploy, giám sát và sao lưu dữ liệu.</p><div class="tags"><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">Linux / VPS</span><span class="tag">Grafana</span></div></article>
+        </div>
+      </div>
+    </section>
+
+
 
     <section class="contact wrap" id="lien-he" aria-labelledby="contact-title">
       <div class="contact-panel"><div><p class="section-kicker"><span>04 /</span> Let's connect</p><h2 id="contact-title">Cùng xây dựng<br><span class="green">điều có ý nghĩa.</span></h2><p>Tìm hiểu thêm về mình qua CV, hoặc kết nối để trao đổi về sản phẩm và công nghệ.</p><div class="contact-socials" aria-label="Kết nối với mình"><a class="social-link" href="#" data-social="github" aria-label="GitHub" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a><a class="social-link" href="#" data-social="linkedin" aria-label="LinkedIn" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a><a class="social-link" href="#" data-social="facebook" aria-label="Facebook" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a><a class="social-link" href="#" data-social="email" aria-label="Email" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a><span class="social-caption">FIND ME ONLINE ↗</span></div></div><div class="contact-actions"><a class="cv-button large" href="#" data-cv aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>TẢI CV CỦA MÌNH<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button class="print-button" id="print-cv"><svg class="icon" aria-hidden="true"><use href="#i-print"/></svg>In / lưu trang này thành PDF</button></div></div>
@@ -242,8 +268,25 @@
     document.querySelectorAll('[data-name]').forEach(el => { el.textContent = PROFILE.name; });
     document.querySelectorAll('[data-role]').forEach(el => { el.textContent = PROFILE.role; });
     document.title = `${PROFILE.name} — ${PROFILE.role}`;
-    document.querySelector('meta[name="description"]').content = `Portfolio ${PROFILE.name} — ${PROFILE.role}. Frontend, backend, DevOps và mobile trong hệ sinh thái NRApp.`;
+    document.querySelector('meta[name="description"]').content = `Portfolio ${PROFILE.name} — ${PROFILE.role}. NRApp — ứng dụng quản lý công việc; Hanni — frontend web học tiếng Trung theo HSK 3.0.`;
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const themeButton = document.getElementById('theme-toggle');
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      const isLight = theme === 'light';
+      const label = isLight ? 'Chuyển sang giao diện tối' : 'Chuyển sang giao diện sáng';
+      themeButton.setAttribute('aria-label', label);
+      themeButton.title = label;
+      themeButton.setAttribute('aria-pressed', String(isLight));
+      document.querySelector('meta[name="theme-color"]').content = isLight ? '#f6f8f5' : '#25272b';
+    }
+    applyTheme(document.documentElement.dataset.theme);
+    themeButton.addEventListener('click', () => {
+      const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      applyTheme(theme);
+      try { localStorage.setItem('portfolio-theme', theme); } catch {}
+    });
 
     let toastTimer;
     function showToast(message) {
@@ -312,20 +355,6 @@
       printContact.append(line);
     });
 
-    const filters = [...document.querySelectorAll('[data-filter]')];
-    const skillCards = [...document.querySelectorAll('.skill-card')];
-    filters.forEach(button => button.addEventListener('click', () => {
-      const filter = button.dataset.filter;
-      filters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-      let count = 0;
-      skillCards.forEach(card => {
-        const matches = filter === 'all' || card.dataset.category.split(' ').includes(filter);
-        card.hidden = !matches;
-        if (matches) count++;
-      });
-      document.getElementById('filter-status').textContent = `Đang hiển thị ${count} nhóm kỹ năng${filter === 'all' ? '' : ` · ${button.textContent}`}.`;
-    }));
-
     const menuButton = document.getElementById('menu-toggle');
     const menu = document.getElementById('nav-links');
     function closeMenu() {
@@ -345,18 +374,6 @@
     });
     window.matchMedia('(min-width: 681px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
 
-    // Khi in: mở chi tiết dự án và hiện mọi nhóm kỹ năng, sau đó khôi phục trạng thái.
-    let detailState = null;
-    window.addEventListener('beforeprint', () => {
-      if (detailState) return;
-      detailState = [...document.querySelectorAll('.project-details')].map(el => ({ el, open: el.open }));
-      detailState.forEach(({ el }) => { el.open = true; });
-    });
-    window.addEventListener('afterprint', () => {
-      if (!detailState) return;
-      detailState.forEach(({ el, open }) => { el.open = open; });
-      detailState = null;
-    });
     document.getElementById('print-cv').addEventListener('click', () => window.print());
 
     // Nội dung mặc định vẫn hiện nếu JavaScript hoặc IntersectionObserver không khả dụng.
@@ -366,7 +383,7 @@
         '.site-header', '.hero-copy > :not(.print-heading)', '.engineering-art',
         '.hero-stats > *', '.stack-list', '.about-grid > *', '.competency',
         '.section-head', '.filters', '.skill-card', '.skill-note', '.project-card',
-        '.workflow-heading', '.workflow-step', '.contact-panel', '.footer-inner'
+        '.project-release', '.contact-panel', '.footer-inner'
       ].join(','));
       const reveal = (element, delay = 0) => {
         element.style.setProperty('--reveal-delay', `${delay}ms`);
