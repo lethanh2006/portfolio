@@ -105,6 +105,89 @@
     @media print{.projects{break-before:auto}.product-cta{background:none;border:0;padding:0;color:#284332;min-height:0}.project-architecture{display:none}.featured-products .project-visual{display:none}.featured-products .project-links{margin-top:8px;padding-top:0}.project-body .project-credit{font-size:8pt}}
     .hero-actions .hanni-hero-cta{min-height:78px;min-width:300px;padding:22px 32px;font-size:18px;gap:28px}.hero-actions .hanni-hero-cta .icon{width:26px;height:26px}
     @media(max-width:680px){.hero-actions .hanni-hero-cta{width:100%;min-width:0;min-height:72px;padding:20px 24px;font-size:17px}.hero-actions>.text-link{font-size:12px}}
+    /* Portfolio layout refresh */
+    @media screen{
+      :root{--max:1280px;--bg:#f8faf7;--deep:#eef3ed;--panel:#fff;--line:#dce5dc;--text:#192b21;--muted:#53675a;--green:#14683f;--green-ink:#fff;--sans:Inter,"Segoe UI",Arial,sans-serif}
+      html[data-theme="light"]{--bg:#f8faf7;--deep:#eef3ed;--panel:#fff;--line:#dce5dc;--text:#192b21;--muted:#53675a;--green:#14683f;--green-ink:#fff}
+      html[data-theme="dark"]{--bg:#171f1b;--deep:#1d2922;--panel:#243129;--line:#3b4c40;--text:#eef5ef;--muted:#b1c1b4;--green:#93dbab;--green-ink:#153321}
+      body{font-size:16px;line-height:1.65}
+      .wrap{width:min(var(--max),calc(100% - 80px))}
+      .site-header{height:86px;background:var(--bg)}
+      .brand-mark{font-size:25px}.brand-name{font-size:21px;letter-spacing:-.8px}
+      .nav-links{gap:29px}.nav-links a{font-size:14px;font-weight:500}
+      .nav-links a:first-child:after{display:none}
+      .header-socials{gap:12px}.social-link{color:var(--muted)}
+      .theme-toggle{width:42px;height:42px;border-radius:12px;background:transparent}
+      .hero{padding-top:72px;padding-bottom:0}
+      .hero-main{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(38px,5vw,86px);align-items:center}
+      .hero-copy{min-width:0}
+      .role-pill{padding:0;margin:0 0 29px;border:0;background:none!important;color:var(--green);font:600 11px var(--mono);letter-spacing:1.2px;text-transform:uppercase}
+      .role-divider{display:block;width:1px;height:13px;background:var(--line);margin-inline:5px}
+      .role-pill span:last-child{color:var(--muted)}
+      .hero h1{font-size:clamp(54px,5.5vw,80px);line-height:1.06;letter-spacing:-.065em;font-weight:730;text-wrap:balance}
+      .hero h1 .green{display:block}
+      .hero-intro{max-width:575px;margin-top:29px;color:var(--muted);font-size:16px;line-height:1.8}
+      .hero-intro strong{font-weight:650;color:var(--text)}
+      .hero-actions{gap:12px;margin-top:33px;max-width:590px}
+      .hero-actions .hanni-hero-cta,.hero-actions .cv-hero{min-height:55px;min-width:0;padding:13px 19px;font-size:13px;gap:12px;border-radius:10px;letter-spacing:0;box-shadow:none}
+      .hero-actions .hanni-hero-cta .icon,.hero-actions .cv-hero .icon{width:18px;height:18px}
+      .hero-actions .cv-hero{border-color:var(--line);color:var(--text);background:var(--panel)}
+      .hero-actions .cv-hero:hover{background:var(--deep);color:var(--text);border-color:var(--green)}
+      .hero-actions>.text-link{flex-basis:100%;width:max-content;margin-top:9px;font-size:12px;color:var(--muted);border-color:var(--line)}
+      .hero-footnote{margin-top:30px;font-size:10px;letter-spacing:1.2px;color:var(--green)}
+      .hero-showcase{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 24px 65px #16382110;min-width:0}
+      .showcase-top{display:flex;justify-content:space-between;padding:3px 4px 15px;font:600 10px var(--mono);letter-spacing:1.2px;color:var(--muted)}
+      .showcase-hanni{display:block;position:relative;overflow:hidden;border-radius:12px;aspect-ratio:1.75;background:#a61c1c}
+      .showcase-hanni img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+      .showcase-hanni:hover img{transform:scale(1.04)}
+      .showcase-open{position:absolute;right:12px;bottom:12px;width:36px;height:36px;display:grid;place-items:center;background:#fff;color:#173b24;border-radius:50%;box-shadow:0 4px 12px #0003}
+      .showcase-open .icon{width:18px;height:18px}
+      .showcase-product{display:flex;justify-content:space-between;align-items:end;gap:15px;padding:18px 4px 20px;border-bottom:1px solid var(--line)}
+      .showcase-product>div{display:grid;gap:1px}.showcase-index,.showcase-tech{font:10px var(--mono);color:var(--muted)}
+      .showcase-index{letter-spacing:1px;color:var(--green);margin-bottom:6px}
+      .showcase-product strong{font-size:24px;letter-spacing:-.8px;line-height:1.1}.showcase-product>div>span:last-child{font-size:12px;color:var(--muted)}
+      .showcase-tech{white-space:nowrap;padding-bottom:4px}
+      .showcase-nrapp{display:flex;align-items:center;gap:17px;margin-top:16px;padding:17px 19px;background:#153a28;color:#eefaf0;border-radius:12px;transition:transform .25s,background .25s}
+      .showcase-nrapp:hover{transform:translateY(-3px);background:#205238}
+      .nrapp-mark{display:grid;place-items:center;width:55px;height:55px;background:#ffffff19;border:1px solid #ffffff30;border-radius:11px;font-size:29px;line-height:1;font-weight:800;letter-spacing:-2px}
+      .nrapp-mark span{color:#9ce1ac}.nrapp-info{display:grid;gap:1px}.nrapp-info small{font:9px var(--mono);letter-spacing:.6px;color:#b9d8c2}.nrapp-info strong{font-size:19px;line-height:1.2}.nrapp-info>span{font-size:11px;color:#c7decf}.showcase-nrapp>.icon{margin-left:auto;width:18px;height:18px}
+      .hero-stats{margin-top:63px;padding:25px 0 27px;gap:36px}
+      .stat-number{font-size:29px;font-weight:650}.stat-label{font-size:10px;max-width:118px;color:var(--muted)}
+      .hero-signoff{font-size:10px;white-space:nowrap}
+      .stack-strip{background:var(--deep)}.stack-list{padding-block:19px;color:var(--text)}
+      .section{padding-block:96px}.section-head{margin-bottom:37px}.section-kicker{font-size:11px;margin-bottom:13px;letter-spacing:1.1px}
+      h2{font-size:clamp(30px,3vw,43px);font-weight:680;letter-spacing:-.045em}.section-description{font-size:14px;line-height:1.75}
+      .about-grid{gap:90px}.about-title{font-size:clamp(31px,3vw,43px)}.about-copy>p{font-size:15px;line-height:1.85}
+      .project-grid{gap:21px}.project-card,.skill-card,.competency{border-radius:14px;background:var(--panel)}
+      .project-card{box-shadow:0 9px 30px #17382008}.project-body{padding:27px 29px 30px}.project-body h3{font-size:24px;font-weight:680}.project-body>p{font-size:13px}
+      .project-type{font-size:10px}.tag{border-radius:5px}
+      .skill-card{padding:29px}.skill-card>p{font-size:13px}.skill-header h3{font-size:17px}
+      .contact-panel{border-radius:17px}.contact-panel h2{font-weight:680}
+      .reveal:not(.is-visible){opacity:1;translate:none;pointer-events:auto}.reveal.is-visible{animation:none}
+    }
+    @media screen and (max-width:1050px){
+      .wrap{width:calc(100% - 56px)}.hero-main{gap:32px}.hero h1{font-size:clamp(49px,5.4vw,67px)}
+      .hero-intro{font-size:14px}.showcase-tech{display:none}.hero-stats{gap:23px}.hero-signoff{display:none}
+    }
+    @media screen and (max-width:760px){
+      .site-header{height:74px}.nav-links{top:68px}.nav-actions{gap:10px}.theme-toggle{width:40px;height:40px}
+      .hero{padding-top:51px}.hero-main{grid-template-columns:1fr;gap:43px}.hero h1{font-size:clamp(49px,8vw,70px)}
+      .hero-intro{max-width:650px}.hero-showcase{max-width:620px;width:100%;margin-inline:auto}.hero-stats{margin-top:44px;flex-wrap:wrap;gap:20px 35px}
+      .stat{min-width:calc(50% - 20px)}.section{padding-block:72px}.section-head{gap:18px}.about-grid{gap:25px}
+    }
+    @media screen and (max-width:680px){
+      .wrap{width:calc(100% - 36px)}.nav-links{left:18px;right:18px;background:var(--panel);border-radius:12px}.nav-menu{border-radius:10px;background:transparent}
+      .hero{padding-top:42px}.role-pill{font-size:9px;letter-spacing:.8px;margin-bottom:22px}
+      .hero h1{font-size:clamp(45px,10vw,62px);letter-spacing:-.06em}.hero-intro{font-size:14px;margin-top:23px}
+      .hero-actions{margin-top:26px}.hero-actions .hanni-hero-cta{width:auto;min-height:53px;padding:13px 17px;font-size:12px}.hero-actions .cv-hero{min-height:53px;padding:13px 16px;font-size:12px}
+      .hero-actions>.text-link{margin-top:7px}.hero-footnote{margin-top:24px;font-size:9px}
+      .hero-showcase{padding:12px;border-radius:16px}.showcase-top{font-size:9px;padding-bottom:11px}.showcase-hanni{border-radius:9px}
+      .showcase-product{padding:15px 3px 17px}.showcase-product strong{font-size:21px}.showcase-nrapp{padding:14px;gap:12px}.nrapp-mark{width:49px;height:49px;font-size:25px}
+      .hero-stats{gap:22px 12px}.stat{min-width:calc(50% - 6px);gap:10px}.stat-number{font-size:25px}.stat-label{font-size:9px}
+      .section-head{display:block}.section-description{margin-top:16px}.about-grid{grid-template-columns:1fr;gap:20px}
+      .project-grid,.skills-grid{grid-template-columns:1fr}.project-body{padding:24px}.contact-panel{padding:28px}
+    }
+    @media print{.hero-showcase{display:none!important}}
   </style>
 </head>
 <body>
@@ -155,26 +238,24 @@
       <div class="hero-main">
         <div class="hero-copy">
           <div class="print-heading"><h2 data-name>Thanh Lê</h2><p data-role>Software Engineer</p><div class="print-contact" id="print-contact"></div></div>
-          <div class="role-pill"><span class="dot"></span><span data-role>Software Engineer</span></div>
-          <h1 id="hero-title">Từ ý tưởng.<br>Đến sản phẩm <span class="green">hoàn chỉnh.</span></h1>
+          <div class="role-pill"><span class="dot"></span><span data-role>Software Engineer</span><span class="role-divider"></span><span>Portfolio / 2026</span></div>
+          <h1 id="hero-title">Từ ý tưởng<br>đến sản phẩm <span class="green">thực tế.</span></h1>
           <p class="hero-intro">Xin chào, mình là <strong data-name>Thanh Lê</strong>. Mình xây dựng <strong>NRApp</strong> — ứng dụng quản lý công việc, từ web, backend đến mobile. Với <strong>Hanni</strong> — web học tiếng Trung, mình phụ trách frontend và tích hợp API.</p>
           <div class="hero-actions">
-            <a class="cv-button cv-hero" href="#" data-cv aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>Tải CV</a>
             <a class="cv-button hanni-hero-cta" href="https://hanni.dangpham.id.vn/" target="_blank" rel="noopener noreferrer">Trải nghiệm Hanni<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="cv-button cv-hero" href="#" data-cv aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>Tải CV</a>
             <a class="text-link" href="https://github.com/lethanh2006/Nrapp/releases/download/v1.0.4/Nrapp.apk"><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>Tải NRApp · v1.0.4</a>
           </div>
           <p class="hero-footnote">FRONTEND / BACKEND / DEVOPS / MOBILE</p>
         </div>
-        <div class="engineering-art" role="img" aria-label="Sơ đồ các kỹ năng kết nối: frontend Next.js và React, backend NestJS và Node.js, mobile React Native và Expo, DevOps Docker và OpenTelemetry.">
-          <div class="art-topline"><span>THE ENGINEERING WORKSPACE</span><span>FULL STACK ↗</span></div>
-          <div class="art-orbit"></div>
-          <svg class="diagram" viewBox="0 0 480 364" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M126 70H240V145M358 135H286M126 271H240V217M358 271H240V217" stroke="currentColor" stroke-width="1"/><circle cx="240" cy="70" r="3" fill="#a7edb9"/><circle cx="240" cy="271" r="3" fill="#a7edb9"/></svg>
-          <div class="core"><div class="core-mark">&lt;/&gt;</div><div class="core-label">BUILD. CONNECT.</div></div>
-          <div class="tech-node node-fe"><span class="node-icon"><svg class="icon"><use href="#i-window"/></svg></span><div><b>Frontend</b><small>Next.js · React</small></div></div>
-          <div class="tech-node node-be"><span class="node-icon"><svg class="icon"><use href="#i-server"/></svg></span><div><b>Backend</b><small>NestJS · Node.js</small></div></div>
-          <div class="tech-node node-mobile"><span class="node-icon"><svg class="icon"><use href="#i-phone"/></svg></span><div><b>Mobile app</b><small>React Native · Expo</small></div></div>
-          <div class="tech-node node-ops"><span class="node-icon"><svg class="icon"><use href="#i-cloud"/></svg></span><div><b>DevOps</b><small>Docker · VPS</small></div></div>
-          <div class="art-bottom"><span class="green">❯</span><span>turning ideas into working software</span><span class="cursor"></span></div>
+        <div class="hero-showcase" aria-label="Sản phẩm nổi bật">
+          <div class="showcase-top"><span>SELECTED WORK</span><span>01 — 02</span></div>
+          <a class="showcase-hanni" href="https://hanni.dangpham.id.vn/" target="_blank" rel="noopener noreferrer" aria-label="Xem Hanni, web học tiếng Trung">
+            <img src="./assets/hanni-banner.png" width="1672" height="941" alt="Hanni, nền tảng học tiếng Trung với linh vật cáo" fetchpriority="high">
+            <span class="showcase-open" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+          </a>
+          <div class="showcase-product"><div><span class="showcase-index">01 / FRONTEND DEVELOPMENT</span><strong>Hanni</strong><span>Web học tiếng Trung</span></div><span class="showcase-tech">Next.js · React · API</span></div>
+          <a class="showcase-nrapp" href="#du-an" aria-label="Tìm hiểu dự án NRApp"><span class="nrapp-mark">N<span>.</span></span><span class="nrapp-info"><small>02 / FULL STACK PRODUCT</small><strong>NRApp</strong><span>Web · Backend · Mobile</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Sản phẩm và chuyên môn">
